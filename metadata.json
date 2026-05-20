@@ -1,0 +1,207 @@
+{
+  "kode_kelompok": "Selasa-10",
+  "topik_pilihan": 2,
+  "nama_topik": "RNN / GRU / LSTM",
+  "judul_proyek": "Analisis Sentimen Calon Presiden Indonesia 2024 Menggunakan Perbandingan Model RNN, LSTM, dan GRU",
+  "abstrak_singkat": "Proyek ini bertujuan mengklasifikasikan sentimen publik terhadap 3 kandidat calon presiden 2024 berdasarkan data Twitter sebelum masa kampanye (Oktober 2022 - April 2023). Dataset publik dari Kaggle berjumlah 29.728 sampel digunakan untuk melatih tiga arsitektur Recurrent Neural Network: Simple RNN sebagai baseline, Bidirectional LSTM sebagai model utama, dan Bidirectional GRU sebagai pembanding. Data yang tidak seimbang antar kelas ditangani menggunakan class weight. Kinerja dievaluasi berdasarkan Accuracy, Precision, Recall, F1-Score, dan Confusion Matrix.",
+
+  "metode_ai": [
+    {
+      "nama": "Long Short-Term Memory (LSTM)",
+      "peran": "utama",
+      "varian": "Bidirectional LSTM dengan Embedding Layer dan Dropout",
+      "catatan": "Model utama menggunakan arsitektur Bidirectional untuk menangkap konteks dari kedua arah kalimat. Ditargetkan untuk mengatasi masalah vanishing gradient pada data teks sekuensial."
+    },
+    {
+      "nama": "RNN",
+      "peran": "baseline",
+      "varian": "Vanilla Simple RNN dengan Embedding Layer",
+      "catatan": "Digunakan sebagai baseline satu arah untuk membandingkan keunggulan arsitektur yang lebih kompleks."
+    },
+    {
+      "nama": "Gated Recurrent Unit (GRU)",
+      "peran": "pembanding",
+      "varian": "Bidirectional GRU dengan Embedding Layer dan Dropout",
+      "catatan": "Model pembanding menggunakan arsitektur Bidirectional, untuk melihat efisiensi waktu komputasi vs kinerja metrik dibanding LSTM."
+    }
+  ],
+
+  "frameworks": [
+    {
+      "nama": "TensorFlow / Keras",
+      "versi": "2.15",
+      "kegunaan": "Pembuatan arsitektur dan proses training model (RNN, LSTM, GRU)"
+    },
+    {
+      "nama": "Pandas",
+      "versi": "Terbaru",
+      "kegunaan": "Manipulasi dataframe, penggabungan data CSV, dan pembersihan teks (preprocessing)"
+    },
+    {
+      "nama": "Scikit-learn",
+      "versi": "Terbaru",
+      "kegunaan": "Train-test split, label encoding, class weight, dan metrik evaluasi (Accuracy, F1-Score, Confusion Matrix)"
+    },
+    {
+      "nama": "Matplotlib & Seaborn",
+      "versi": "Terbaru",
+      "kegunaan": "Visualisasi grafik metrik evaluasi dan Confusion Matrix"
+    }
+  ],
+
+  "datasets": [
+    {
+      "nama": "Indonesia Presidential Candidate's Dataset, 2024",
+      "tipe": "publik",
+      "sumber": "Kaggle",
+      "url_sumber_publik": "https://www.kaggle.com/datasets/jocelyndumlao/indonesia-presidential-candidates-dataset-2024",
+      "jumlah_sampel": 29728,
+      "jumlah_kelas": 3,
+      "proses_akuisisi_mandiri": "",
+      "peran_di_proyek": "Dataset utama untuk proses training, validasi, dan testing",
+      "spek_rl": null
+    }
+  ],
+
+  "metrik_utama": [
+    "Accuracy",
+    "F1-Score (Macro/Weighted)",
+    "Precision & Recall",
+    "Confusion Matrix",
+    "Waktu Pelatihan (Training Time)"
+  ],
+
+  "klaim_bonus": ["B1", "B3"],
+
+  "anggota": [
+    {
+      "nama": "Reyhan Ahnaf Deannova",
+      "npm": "2306267100",
+      "peran_utama": "Data Engineer (Acquisition & Pipeline)",
+      "focus_area": [
+        "Pengunduhan dataset melalui Kaggle API",
+        "Penggabungan dataset Ganjar, Prabowo, dan Anies menjadi satu dataframe utama",
+        "Penanganan missing values dan duplikasi data"
+      ],
+      "konsep_dikuasai_implementasi": [
+        "Pandas DataFrame concatenation dan manipulasi index",
+        "Pengelolaan API Kaggle di environment Google Colab"
+      ],
+      "konsep_dikuasai_teori": [
+        "Konsep integritas data saat penggabungan dari berbagai sumber",
+        "Format data CSV dan struktur tabular"
+      ],
+      "bagian_laporan": [
+        "Bab 1.3 (Ruang Lingkup & Batasan Sementara)",
+        "Bab 3.2 (Bagian Dataset)"
+      ],
+      "bagian_kode": ["Bagian Data Acquisition & Merging"]
+    },
+    {
+      "nama": "Muhammad Hilmi Al Muttaqi",
+      "npm": "2306267082",
+      "peran_utama": "Data Analyst (Preprocessing & EDA)",
+      "focus_area": [
+        "Pembersihan teks (menghapus URL, hashtag, angka, tanda baca)",
+        "Tokenisasi dan padding sekuens teks",
+        "Eksplorasi Data (EDA) distribusi sentimen antar kandidat"
+      ],
+      "konsep_dikuasai_implementasi": [
+        "Penggunaan Regular Expression (Regex) untuk text cleaning",
+        "Keras Tokenizer dan pad_sequences",
+        "Pembuatan plot distribusi kelas (Class Balance)"
+      ],
+      "konsep_dikuasai_teori": [
+        "Konsep representasi kata dalam bentuk numerik (Word Embedding)",
+        "Pentingnya panjang sekuens yang seragam dalam batch training NLP"
+      ],
+      "bagian_laporan": [
+        "Bab 1.1 (Topik yang Dipilih)",
+        "Bab 1.2 (Rumusan Masalah)",
+        "Bab 3.2 (Bagian Pra-pemrosesan)"
+      ],
+      "bagian_kode": ["Bagian Text Preprocessing & Tokenization"]
+    },
+    {
+      "nama": "Bryan Herdianto",
+      "npm": "2306210885",
+      "peran_utama": "Model Engineer",
+      "focus_area": [
+        "Pembuatan arsitektur model RNN, Bidirectional LSTM, dan Bidirectional GRU",
+        "Hyperparameter tuning (batch size, learning rate, class weight)",
+        "Penerapan Dropout dan EarlyStopping untuk menghindari overfitting"
+      ],
+      "konsep_dikuasai_implementasi": [
+        "TensorFlow Keras Sequential API",
+        "Penerapan Bidirectional wrapper pada LSTM dan GRU",
+        "Class weight untuk mengatasi data imbalance",
+        "EarlyStopping callback untuk menghentikan training saat val_loss tidak membaik"
+      ],
+      "konsep_dikuasai_teori": [
+        "Perbedaan mekanisme memori internal antara LSTM, GRU, dan RNN",
+        "Keunggulan Bidirectional dalam menangkap konteks dua arah pada teks",
+        "Masalah vanishing dan exploding gradient",
+        "Fungsi aktivasi (Softmax/Sigmoid) pada layer klasifikasi akhir"
+      ],
+      "bagian_laporan": [
+        "Bab 2.2 (Arsitektur Model yang Dipilih)",
+        "Bab 2.3 (Justifikasi Awal Pemilihan Pendekatan)",
+        "Bab 3.3 (Implementasi Model)"
+      ],
+      "bagian_kode": [
+        "Bagian Pembangunan Model",
+        "Bagian Training Loop",
+        "Bagian Class Weight & EarlyStopping"
+      ]
+    },
+    {
+      "nama": "Adhikananda Wira Januar",
+      "npm": "2306267113",
+      "peran_utama": "Evaluator & Report Writer",
+      "focus_area": [
+        "Evaluasi komparatif metrik ketiga model (Akurasi, F1, Waktu)",
+        "Generasi dan interpretasi Confusion Matrix",
+        "Analisis keterbatasan model dan bias data Twitter (Bonus B3)",
+        "Penyusunan file metadata JSON dan integrasi laporan"
+      ],
+      "konsep_dikuasai_implementasi": [
+        "Sklearn classification_report & confusion_matrix",
+        "Plotting kurva validasi (Loss/Accuracy) dengan Matplotlib/Seaborn",
+        "Format dan struktur standar JSON"
+      ],
+      "konsep_dikuasai_teori": [
+        "Perbedaan metrik Accuracy vs F1-Score pada kasus klasifikasi teks",
+        "Interpretasi False Positives dan False Negatives dari Confusion Matrix",
+        "Pemahaman bias demografis pengguna Twitter di Indonesia"
+      ],
+      "bagian_laporan": [
+        "Bab 2.1 (Studi Literatur)",
+        "Bab 3.1 (Ringkasan Status per Tahap)",
+        "Bab 3.4 (Hasil Eksperimen Sementara)",
+        "Bab 4 (Pembagian Tugas & Deklarasi)"
+      ],
+      "bagian_kode": ["Bagian Evaluasi Metrik", "Bagian Visualisasi Hasil"]
+    }
+  ],
+
+  "tautan": {
+    "github": "https://github.com/bryanherdianto/tugas_akhir_ai",
+    "colab": "https://colab.research.google.com/drive/1V5x3ueBjGmk7cdL-1xVj5UD8VzfwVGPA?usp=sharing",
+    "dataset_mandiri": null,
+    "video_demo": null
+  },
+
+  "ai_assistant_usage": {
+    "digunakan": true,
+    "tools": ["Gemini 3.1 Pro", "ChatGPT"],
+    "bagian": [
+      "Pembuatan awal struktur kode dan pipeline di file Proyek_AI.ipynb",
+      "Konsultasi pemilihan metrik evaluasi komparatif untuk model RNN/LSTM",
+      "Review output notebook, identifikasi masalah underfitting dan class imbalance",
+      "Rekomendasi perbaikan: penambahan Bidirectional, class_weight, EarlyStopping, dan peningkatan unit/epoch",
+      "Restrukturisasi notebook: pemisahan cell dan penambahan markdown penjelasan",
+      "Bantuan dalam menyusun dan menyesuaikan format file metadata.json"
+    ],
+    "estimasi_persentase": 35
+  }
+}
