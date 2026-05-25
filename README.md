@@ -1,6 +1,7 @@
 # Analisis Sentimen Pilpres 2024: Perbandingan RNN, LSTM, dan GRU
 
-> Link Google Colab: https://colab.research.google.com/drive/1V5x3ueBjGmk7cdL-1xVj5UD8VzfwVGPA?usp=sharing
+> Link Google Colab: https://colab.research.google.com/drive/1V5x3ueBjGmk7cdL-1xVj5UD8VzfwVGPA?usp=sharing  
+> Link Demo: https://youtu.be/d7uHhrlRqZ8
 
 Notebook ini membandingkan tiga arsitektur Recurrent Neural Network (RNN, LSTM, dan GRU) untuk mengklasifikasikan sentimen opini publik terkait Pemilihan Presiden Indonesia 2024.
 

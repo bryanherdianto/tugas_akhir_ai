@@ -56,7 +56,7 @@
       "sumber": "Kaggle",
       "url_sumber_publik": "https://www.kaggle.com/datasets/jocelyndumlao/indonesia-presidential-candidates-dataset-2024",
       "jumlah_sampel": 29728,
-      "jumlah_kelas": 3,
+      "jumlah_kelas": 2,
       "proses_akuisisi_mandiri": "",
       "peran_di_proyek": "Dataset utama untuk proses training, validasi, dan testing",
       "spek_rl": null
@@ -71,7 +71,7 @@
     "Waktu Pelatihan (Training Time)"
   ],
 
-  "klaim_bonus": ["B1", "B3"],
+  "klaim_bonus": ["B3"],
 
   "anggota": [
     {
@@ -188,7 +188,7 @@
     "github": "https://github.com/bryanherdianto/tugas_akhir_ai",
     "colab": "https://colab.research.google.com/drive/1V5x3ueBjGmk7cdL-1xVj5UD8VzfwVGPA?usp=sharing",
     "dataset_mandiri": null,
-    "video_demo": null
+    "video_demo": "https://youtu.be/d7uHhrlRqZ8"
   },
 
   "ai_assistant_usage": {
